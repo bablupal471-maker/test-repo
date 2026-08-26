@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A beginner-friendly 15-day tutorial series for learning Git, GitHub, GitHub Pages, and GitHub Copilot.">
+<meta name="theme-color" content="#0f172a">
 <title>Git, GitHub & GitHub Copilot Tutorial</title>
 
 <style>
@@ -10,67 +12,99 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+:root{
+    color-scheme:dark;
     font-family: 'Segoe UI', sans-serif;
+    --background:#0f172a;
+    --surface:#1e293b;
+    --surface-dark:#020617;
+    --text:#f8fafc;
+    --muted:#cbd5e1;
+    --accent:#38bdf8;
+    --border:rgba(255,255,255,0.1);
 }
 
 body{
-    background:#0f172a;
-    color:#fff;
+    background:var(--background);
+    color:var(--text);
     line-height:1.6;
 }
 
+.skip-link{
+    position:absolute;
+    left:1rem;
+    top:-4rem;
+    z-index:10;
+    padding:.75rem 1rem;
+    background:var(--accent);
+    color:#082f49;
+    font-weight:700;
+}
+
+.skip-link:focus{
+    top:1rem;
+}
+
 .container{
-    width:90%;
+    width:min(90%, 1200px);
     max-width:1200px;
     margin:auto;
 }
 
 .hero{
     text-align:center;
-    padding:80px 20px;
-    background:linear-gradient(135deg,#1e293b,#0f172a);
+    padding:clamp(3.5rem, 8vw, 5rem) 1.25rem;
+    background:linear-gradient(135deg,var(--surface),var(--background));
 }
 
 .hero h1{
-    font-size:3rem;
-    margin-bottom:20px;
-    color:#38bdf8;
+    font-size:clamp(2rem, 6vw, 3rem);
+    margin-bottom:1.25rem;
+    color:var(--accent);
 }
 
 .hero p{
     max-width:800px;
     margin:auto;
-    font-size:1.1rem;
-    color:#cbd5e1;
+    font-size:clamp(1rem, 2vw, 1.1rem);
+    color:var(--muted);
 }
 
 .section{
-    padding:60px 0;
+    padding:clamp(2.5rem, 6vw, 3.75rem) 0;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:40px;
-    color:#38bdf8;
-    font-size:2rem;
+    margin-bottom:2.5rem;
+    color:var(--accent);
+    font-size:clamp(1.5rem, 4vw, 2rem);
+}
+
+.overview-text{
+    max-width:800px;
+    margin:0 auto;
+    text-align:center;
 }
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(min(100%, 18rem),1fr));
+    gap:1.25rem;
 }
 
 .card{
-    background:#1e293b;
-    padding:25px;
+    background:var(--surface);
+    padding:1.5rem;
     border-radius:10px;
     box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
 .card h3{
-    margin-bottom:15px;
-    color:#38bdf8;
+    margin-bottom:1rem;
+    color:var(--accent);
 }
 
 .card ul{
@@ -78,14 +112,14 @@ body{
 }
 
 .card li{
-    padding:6px 0;
-    border-bottom:1px solid rgba(255,255,255,0.1);
+    padding:.4rem 0;
+    border-bottom:1px solid var(--border);
 }
 
 .tools,
 .outcomes{
-    background:#1e293b;
-    padding:30px;
+    background:var(--surface);
+    padding:1.5rem;
     border-radius:10px;
 }
 
@@ -96,50 +130,86 @@ body{
 
 .tools li,
 .outcomes li{
-    padding:10px 0;
+    padding:.625rem 0;
+}
+
+.repository-structure{
+    padding:1.25rem;
+    overflow-x:auto;
+    background:var(--surface);
+    border-radius:10px;
 }
 
 .footer{
     text-align:center;
-    padding:30px;
-    background:#020617;
-    margin-top:50px;
+    padding:1.875rem;
+    background:var(--surface-dark);
+    margin-top:3.125rem;
 }
 
 .author{
-    color:#38bdf8;
+    color:var(--accent);
     font-weight:bold;
+}
+
+a:focus-visible{
+    outline:3px solid var(--accent);
+    outline-offset:3px;
+}
+
+@media (max-width:480px){
+    .container{
+        width:min(92%, 1200px);
+    }
+
+    .card,
+    .tools,
+    .outcomes{
+        padding:1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion:reduce){
+    *,
+    *::before,
+    *::after{
+        scroll-behavior:auto !important;
+        transition-duration:0.01ms !important;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="hero">
     <div class="container">
-        <h1>🚀 Git, GitHub & GitHub Copilot</h1>
+        <h1>Git, GitHub &amp; GitHub Copilot</h1>
         <p>
             15-Day Tutorial Series to Master Git, GitHub, and GitHub Copilot.
             Learn Version Control, Collaboration, GitHub Pages, and AI-Assisted Development.
         </p>
     </div>
-</section>
+</header>
 
-<section class="section container">
-    <h2 class="section-title">📚 Course Overview</h2>
-    <p style="text-align:center;">
+<main id="main-content">
+<section class="section container" aria-labelledby="overview-title">
+    <h2 id="overview-title" class="section-title">Course Overview</h2>
+    <p class="overview-text">
         A structured roadmap designed for beginners to learn Git, GitHub,
         repository management, collaboration workflows, and GitHub Copilot.
     </p>
 </section>
 
-<section class="section container">
-    <h2 class="section-title">📅 Course Schedule</h2>
+<section class="section container" aria-labelledby="schedule-title">
+    <h2 id="schedule-title" class="section-title">Course Schedule</h2>
 
     <div class="cards">
 
-        <div class="card">
-            <h3>🗓️ Week 1: Git & GitHub Fundamentals</h3>
+        <article class="card">
+            <h3>Week 1: Git &amp; GitHub Fundamentals</h3>
             <ul>
                 <li>✅ Day 1: Introduction to Git and GitHub</li>
                 <li>✅ Day 2: Creating and Managing Repositories</li>
@@ -149,10 +219,10 @@ body{
                 <li>✅ Day 6: GitHub Pages</li>
                 <li>✅ Day 7: Issues, Boards & Wiki</li>
             </ul>
-        </div>
+        </article>
 
-        <div class="card">
-            <h3>🤖 Week 2: GitHub Copilot</h3>
+        <article class="card">
+            <h3>Week 2: GitHub Copilot</h3>
             <ul>
                 <li>Day 8: Introduction to Copilot</li>
                 <li>Day 9: Code Suggestions</li>
@@ -162,10 +232,10 @@ body{
                 <li>Day 13: Debugging & Refactoring</li>
                 <li>Day 14: Fast Project Development</li>
             </ul>
-        </div>
+        </article>
 
-        <div class="card">
-            <h3>🚀 Week 3: Advanced Features</h3>
+        <article class="card">
+            <h3>Week 3: Advanced Features</h3>
             <ul>
                 <li>Day 15: Final Project</li>
                 <li>GitHub Actions</li>
@@ -174,13 +244,13 @@ body{
                 <li>Automation Workflows</li>
                 <li>Open Source Contributions</li>
             </ul>
-        </div>
+        </article>
 
     </div>
 </section>
 
-<section class="section container">
-    <h2 class="section-title">🛠️ Tools Required</h2>
+<section class="section container" aria-labelledby="tools-title">
+    <h2 id="tools-title" class="section-title">Tools Required</h2>
     <div class="tools">
         <ul>
             <li>✔ Git</li>
@@ -193,8 +263,8 @@ body{
     </div>
 </section>
 
-<section class="section container">
-    <h2 class="section-title">🎯 Learning Outcomes</h2>
+<section class="section container" aria-labelledby="outcomes-title">
+    <h2 id="outcomes-title" class="section-title">Learning Outcomes</h2>
     <div class="outcomes">
         <ul>
             <li>✔ Use Git commands confidently</li>
@@ -208,11 +278,11 @@ body{
     </div>
 </section>
 
-<section class="section container">
-    <h2 class="section-title">📂 Repository Structure</h2>
+<section class="section container" aria-labelledby="repository-title">
+    <h2 id="repository-title" class="section-title">Repository Structure</h2>
 
-<pre style="background:#1e293b;padding:20px;border-radius:10px;overflow:auto;">
 GITHUB-COPILOT-TUTORIAL/
+<pre class="repository-structure"><code>GITHUB-COPILOT-TUTORIAL/
 │
 ├── README.md
 ├── Day-01/
@@ -229,16 +299,15 @@ GITHUB-COPILOT-TUTORIAL/
 ├── Day-12/
 ├── Day-13/
 ├── Day-14/
-└── Day-15/
-</pre>
+└── Day-15/</code></pre>
 
 </section>
+</main>
 
 <footer class="footer">
     <h3>⭐ Author</h3>
     <p class="author">Bablu Pal</p>
     <p>WordPress Developer | Frontend Developer | GitHub Learner</p>
-    <br>
     <h2>🚀 Happy Coding!</h2>
 </footer>
 
