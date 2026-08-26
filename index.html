@@ -72,6 +72,24 @@ body{
     color:var(--muted);
 }
 
+.site-nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:1rem 1.5rem;
+    margin-top:2rem;
+}
+
+.site-nav a{
+    color:var(--muted);
+    font-weight:600;
+    text-decoration:none;
+}
+
+.site-nav a:hover{
+    color:var(--accent);
+}
+
 .section{
     padding:clamp(2.5rem, 6vw, 3.75rem) 0;
 }
@@ -116,6 +134,14 @@ body{
     border-bottom:1px solid var(--border);
 }
 
+.card li::before{
+    content:"✓";
+    display:inline-block;
+    width:1.25rem;
+    color:#4ade80;
+    font-weight:700;
+}
+
 .tools,
 .outcomes{
     background:var(--surface);
@@ -131,6 +157,14 @@ body{
 .tools li,
 .outcomes li{
     padding:.625rem 0;
+}
+
+.tools li::before,
+.outcomes li::before{
+    content:"✓";
+    margin-right:.5rem;
+    color:var(--accent);
+    font-weight:700;
 }
 
 .repository-structure{
@@ -191,6 +225,12 @@ a:focus-visible{
             15-Day Tutorial Series to Master Git, GitHub, and GitHub Copilot.
             Learn Version Control, Collaboration, GitHub Pages, and AI-Assisted Development.
         </p>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="#schedule">Schedule</a>
+            <a href="#tools">Tools</a>
+            <a href="#outcomes">Outcomes</a>
+            <a href="#repository">Repository</a>
+        </nav>
     </div>
 </header>
 
@@ -203,7 +243,7 @@ a:focus-visible{
     </p>
 </section>
 
-<section class="section container" aria-labelledby="schedule-title">
+<section id="schedule" class="section container" aria-labelledby="schedule-title">
     <h2 id="schedule-title" class="section-title">Course Schedule</h2>
 
     <div class="cards">
@@ -211,13 +251,13 @@ a:focus-visible{
         <article class="card">
             <h3>Week 1: Git &amp; GitHub Fundamentals</h3>
             <ul>
-                <li>✅ Day 1: Introduction to Git and GitHub</li>
-                <li>✅ Day 2: Creating and Managing Repositories</li>
-                <li>✅ Day 3: Cloning, Forking & Workflow</li>
-                <li>✅ Day 4: Branching and Merging</li>
-                <li>✅ Day 5: Pull Requests & Collaboration</li>
-                <li>✅ Day 6: GitHub Pages</li>
-                <li>✅ Day 7: Issues, Boards & Wiki</li>
+                <li>Day 1: Introduction to Git and GitHub</li>
+                <li>Day 2: Creating and Managing Repositories</li>
+                <li>Day 3: Cloning, Forking &amp; Workflow</li>
+                <li>Day 4: Branching and Merging</li>
+                <li>Day 5: Pull Requests &amp; Collaboration</li>
+                <li>Day 6: GitHub Pages</li>
+                <li>Day 7: Issues, Boards &amp; Wiki</li>
             </ul>
         </article>
 
@@ -249,39 +289,38 @@ a:focus-visible{
     </div>
 </section>
 
-<section class="section container" aria-labelledby="tools-title">
+<section id="tools" class="section container" aria-labelledby="tools-title">
     <h2 id="tools-title" class="section-title">Tools Required</h2>
     <div class="tools">
         <ul>
-            <li>✔ Git</li>
-            <li>✔ GitHub Account</li>
-            <li>✔ GitHub Copilot</li>
-            <li>✔ Visual Studio Code</li>
-            <li>✔ Live Server Extension</li>
-            <li>✔ GitHub Copilot Extension</li>
+            <li>Git</li>
+            <li>GitHub Account</li>
+            <li>GitHub Copilot</li>
+            <li>Visual Studio Code</li>
+            <li>Live Server Extension</li>
+            <li>GitHub Copilot Extension</li>
         </ul>
     </div>
 </section>
 
-<section class="section container" aria-labelledby="outcomes-title">
+<section id="outcomes" class="section container" aria-labelledby="outcomes-title">
     <h2 id="outcomes-title" class="section-title">Learning Outcomes</h2>
     <div class="outcomes">
         <ul>
-            <li>✔ Use Git commands confidently</li>
-            <li>✔ Create and manage repositories</li>
-            <li>✔ Work with branches and merges</li>
-            <li>✔ Collaborate using Pull Requests</li>
-            <li>✔ Deploy projects using GitHub Pages</li>
-            <li>✔ Use GitHub Copilot effectively</li>
-            <li>✔ Build real-world projects</li>
+            <li>Use Git commands confidently</li>
+            <li>Create and manage repositories</li>
+            <li>Work with branches and merges</li>
+            <li>Collaborate using Pull Requests</li>
+            <li>Deploy projects using GitHub Pages</li>
+            <li>Use GitHub Copilot effectively</li>
+            <li>Build real-world projects</li>
         </ul>
     </div>
 </section>
 
-<section class="section container" aria-labelledby="repository-title">
+<section id="repository" class="section container" aria-labelledby="repository-title">
     <h2 id="repository-title" class="section-title">Repository Structure</h2>
 
-GITHUB-COPILOT-TUTORIAL/
 <pre class="repository-structure"><code>GITHUB-COPILOT-TUTORIAL/
 │
 ├── README.md
@@ -305,10 +344,10 @@ GITHUB-COPILOT-TUTORIAL/
 </main>
 
 <footer class="footer">
-    <h3>⭐ Author</h3>
+    <h3>Author</h3>
     <p class="author">Bablu Pal</p>
     <p>WordPress Developer | Frontend Developer | GitHub Learner</p>
-    <h2>🚀 Happy Coding!</h2>
+    <h2>Happy Coding!</h2>
 </footer>
 
 </body>
