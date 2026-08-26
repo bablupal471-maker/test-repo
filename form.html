@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
+    <title>Form</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form action="#" method="post">
-       <input type="text" name="username" placeholder="Enter Your Name">
-       <input type="email" name="email" id="email" placeholder="Enter Your Email">
-       <input type="password" name="password" id="password" placeholder="Enter Your password">
-       <input type="submit" value="Submit">
+     <form action="#" method="post">
+         <label for="username">Name:</label>
+         <input type="text" name="username" id="username" placeholder="Enter your name" required>
+
+         <label for="email">Email:</label>
+         <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+         <label for="password">Password:</label>
+         <input type="password" name="password" id="password" placeholder="Enter your password" required>
+
+         <button type="submit">Submit</button>
     </form>
 </body>
 </html>
