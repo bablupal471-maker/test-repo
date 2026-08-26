@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -108,13 +110,7 @@
 }
 
 /* Index page styles */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-:root{
+.index-page{
     color-scheme:dark;
     font-family: 'Segoe UI', sans-serif;
     --background:#0f172a;
