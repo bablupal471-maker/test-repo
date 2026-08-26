@@ -56,6 +56,57 @@
     background-color: #1d4ed8;
 }
 
+.form-page main {
+    width: 100%;
+    max-width: 760px;
+}
+
+.form-page h1,
+.form-page .records h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form-page .records {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.form-page table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #222222;
+}
+
+.form-page caption {
+    margin-bottom: .75rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+.form-page th,
+.form-page td {
+    padding: .75rem;
+    border: 1px solid #d1d5db;
+    text-align: left;
+}
+
+.form-page th {
+    color: #ffffff;
+    background-color: #2563eb;
+}
+
+.form-page tbody tr:nth-child(even) {
+    background-color: #f3f4f6;
+}
+
 /* Index page styles */
 *{
     margin:0;
